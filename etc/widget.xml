@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:bestseller:Magento_Widget:etc/widget.xsd">
+	<widget class="Bluethink\BestSeller\Block\Widget\BestSellerProducts" id="best_seller_prd">
+		<label>Best Seller Product</label>
+		<description>BestSellerProducts</description>
+		<parameters>
+			<parameter name="bestsellerproducts" sort_order="10" visible="true" xsi:type="text">
+				<label>Best Seller</label>
+			</parameter>
+		</parameters>
+	</widget>
+</widgets>
