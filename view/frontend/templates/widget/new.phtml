@@ -17,8 +17,8 @@ $_productCollection = $block->getConfigData();
 /** @var \Magento\Catalog\Helper\Output $_helper */
 $_helper = $block->getData('outputHelper');
 ?>
-<?php if($block->getModuleStaus()): ?>
-<?php if (!$_productCollection->count()): ?>
+
+    <?php if (!$_productCollection->count()): ?>
     <div class="message info empty">
         <div><?= $escaper->escapeHtml(__('We can\'t find products matching the selection.')) ?></div>
     </div>
@@ -67,11 +67,16 @@ $_helper = $block->getData('outputHelper');
                                     <?= $productImage->toHtml() ?>
                                 </a>
                                 <div class="product details product-item-details">
-                                    <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+                                    <?php $_productNameStripped =
+                                    $block->stripTags($_product->getName(), null, true); ?>
                                     <strong class="product name product-item-name">
                                         <a class="product-item-link"
                                         href="<?= $escaper->escapeUrl($_product->getProductUrl()) ?>">
-                                            <?=/* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name')?>
+                                            <?=/* @noEscape */ $_helper->productAttribute(
+                                                $_product,
+                                                $_product->getName(),
+                                                'name'
+                                            )?>
                                         </a>
                                     </strong>
                                     <?= /* @noEscape */ $block->getProductPrice($_product) ?>
@@ -84,20 +89,24 @@ $_helper = $block->getData('outputHelper');
                                                 <?php if ($_product->isSaleable()):?>
                                                     <?php $postParams = $block->getAddToCartPostParams($_product); ?>
                                                     <form data-role="tocart-form"
-                                                        data-product-sku="<?= $escaper->escapeHtml($_product->getSku()) ?>"
+                                                        data-product-sku="<?= $escaper->escapeHtml($_product->getSku())
+                                                        ?>"
                                                         action="<?= $escaper->escapeUrl($postParams['action']) ?>"
                                                         method="post">
                                                         <input type="hidden"
                                                             name="product"
-                                                            value="<?= /* @noEscape */ $postParams['data']['product'] ?>">
+                                                            value="<?= /* @noEscape */ $postParams['data']['product']
+                                                            ?>">
                                                         <input type="hidden"
                                                             name="<?= /* @noEscape */ Action::PARAM_NAME_URL_ENCODED ?>"
                                                             value="<?=
-                                                            /* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED]
+                                                            /* @noEscape */
+                                                             $postParams['data'][Action::PARAM_NAME_URL_ENCODED]
                                                             ?>">
                                                         <?= $block->getBlockHtml('formkey') ?>
                                                         <button type="submit"
-                                                                title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
+                                                                title="<?= $escaper->escapeHtmlAttr(__('Add to Cart'))
+                                                                ?>"
                                                                 class="action tocart primary"
                                                                 disabled>
                                                             <span><?= $escaper->escapeHtml(__('Add to Cart')) ?></span>
@@ -106,10 +115,12 @@ $_helper = $block->getData('outputHelper');
                                                 <?php else:?>
                                                     <?php if ($_product->isAvailable()):?>
                                                         <div class="stock available">
-                                                            <span><?= $escaper->escapeHtml(__('In stock')) ?></span></div>
+                                                            <span><?= $escaper->escapeHtml(__('In stock'))
+                                                            ?></span></div>
                                                     <?php else:?>
                                                         <div class="stock unavailable">
-                                                            <span><?= $escaper->escapeHtml(__('Out of stock')) ?></span></div>
+                                                            <span><?= $escaper->escapeHtml(__('Out of stock'))
+                                                            ?></span></div>
                                                     <?php endif; ?>
                                                 <?php endif; ?>
                                             </div>
@@ -168,7 +179,7 @@ $_helper = $block->getData('outputHelper');
         </script>
     <?php endif; ?>
 <?php endif; ?>
-<?php endif; ?>
+
 
 <script>
     require(['jquery', 'common'], function($) {

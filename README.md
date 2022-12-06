@@ -1,6 +1,19 @@
 # Magento2 Best seller product slider
 
-In this module, we can create a slider by widget and in that slider, we can select a best-seller product, feature product, and new arrival product.
+- In this module, we can create a slider by widget and in that slider, we can select a best-seller product, feature product, and new arrival product.
+
+- First go to store->configuration and click on Bluethink tab
+!['Slider Configuration'](./doc/slider_setting.png)
+
+- You can select slider product type.
+!['Slider Product Type'](./doc/slider_product_type.png)
+
+- After that you need to add widget on page 
+- Go to Content -> Pages, in Action Field in Grid click Select -> Edit for HomePage.(You can create your own page and use slider)
+- Go to Content and Edit with Page builder
+- Select HTML code from element Tab.
+- Edit HTML code and click on Insert Widget.
+- Select 'Best Seller Product' and Name it and Save.
 
 ## Manually Installation
 
