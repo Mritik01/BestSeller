@@ -1,26 +1,22 @@
- {
+{
   "name": "bluethink/module-bestseller",
-  "description": "Product rendering using widget.",
-  "authors": [
-    {
-        "name": "Ritik",
-        "email": "ritikbluethink0@gmail.com"
-    }
-    ],
-  "require": {
-       "php": "7.0.2|7.0.4|~7.0.6|~7.1.0|~7.2.0|~7.4.0|~8.1.0",
-   "magento/magento-composer-installer": "*"
-  },
+  "description": "Bluethink BestSeller",
   "type": "magento2-module",
-  "version": "0.0.1",
-  "license": [
-   "Bluethink"
+  "minimum-stability": "dev",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "authors": [
+      {
+          "name": "Bluethink",
+          "email": "ritikbluethink0@gmail.com"
+      }
   ],
   "autoload": {
-   "files": [ "registration.php" ],
-   "psr-4": {
-    "Bluethink\\BestSeller\\": ""
-   }
+      "files": [
+          "registration.php"
+      ],
+      "psr-4": {
+          "Bluethink\\BestSeller\\": ""
+      }
   }
- }
-
+}

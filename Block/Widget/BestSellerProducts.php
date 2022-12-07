@@ -30,6 +30,8 @@ class BestSellerProducts extends ListProduct implements BlockInterface
 
     public const PRODUCT_IMAGE = 'small_image';
 
+    public const SELECT_PRODUCT_TYPE = 'select_type';
+
     protected $_template = "widget/new.phtml";
 
     /**
@@ -82,13 +84,13 @@ class BestSellerProducts extends ListProduct implements BlockInterface
      */
     public function getConfigData(): ?object
     {
-        if ($this->getData('select_type') === self::BEST_SELLER_PRODUCT) {
+        if ($this->getData(self::SELECT_PRODUCT_TYPE) === self::BEST_SELLER_PRODUCT) {
             return $this->getBestSellerCollection();
         }
-        if ($this->getData('select_type') === self::FEATURE_PRODUCT) {
+        if ($this->getData(self::SELECT_PRODUCT_TYPE) === self::FEATURE_PRODUCT) {
             return $this->getFeatureProductCollection();
         }
-        if ($this->getData('select_type') === self::NEW_ARRIBALS_PRODUCT) {
+        if ($this->getData(self::SELECT_PRODUCT_TYPE) === self::NEW_ARRIBALS_PRODUCT) {
             return $this->getNewArrivalProductCollection();
         }
     }
@@ -171,6 +173,6 @@ class BestSellerProducts extends ListProduct implements BlockInterface
      */
     public function getProductHeading(): ?string
     {
-        return strtoupper(str_replace('_', ' ', $this->getData('select_type')));
+        return strtoupper(str_replace('_', ' ', $this->getData(self::SELECT_PRODUCT_TYPE)));
     }
 }

@@ -4,12 +4,9 @@
 		<label>Best Seller Product</label>
 		<description>BestSellerProducts</description>
 		<parameters>
-			<parameter name="bestsellerproducts" sort_order="10" visible="true" xsi:type="text">
-				<label>Best Seller</label>
-			</parameter>
 			<parameter name="select_type" xsi:type="select" required="true" source_model="Bluethink\BestSeller\Model\Config\Source\ListMode" visible="true" sort_order="8" >
 				<label translate="true">Select option</label>
-				<description>Select type option</description>
+				<description>Select Product Type</description>
           	</parameter>
 		</parameters>
 	</widget>
